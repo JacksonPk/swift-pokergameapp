@@ -30,7 +30,7 @@ class ViewController: UIViewController {
             /*참조 영상 : https://www.youtube.com/watch?v=zpb4-VnaaqQ */
             /*카드 스택 뷰 옵션 설정. */
             cardStackView.distribution = .fillEqually
-            cardStackView.spacing = STACKVIEW_SPACING            
+            cardStackView.spacing = STACKVIEW_SPACING
             
         }
         
@@ -55,7 +55,16 @@ class ViewController: UIViewController {
         makeStackView()
         arrangeImgViewToStackView()
         
+        /*step-4*/
         
+        let a = PokerGame(howManyPlayers: NumOfPlayers.Three, whichStarter: GameType.FiveStarter)
+        a.deck.shuffleDeck()
+        print(a)
+        a.giveCardsToPlayerNDealer()
+        for index in 0 ..< a.totalPlayers.count {
+            print(a.totalPlayers[index])
+        }
+        print(a.deck)
     }
 }
 
